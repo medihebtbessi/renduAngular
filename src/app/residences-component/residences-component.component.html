@@ -1,0 +1,37 @@
+<div>
+    <h3>Liste des Résidences</h3>
+    <input type="text" name="" id="" placeholder="entre l'adresse" [(ngModel)]="searchAdd">
+    <table border="1" style="width: 100%; text-align: left; border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Image</th>
+          <th>Statut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let res of listResidences | filterByAddress: searchAdd">
+          <td>{{ res.id }}</td>
+          <td>{{ res.name }}</td>
+          <td><img [src]="res.image" alt="Image" style="width: 100px; height: auto;" /></td>
+          <td>
+            <!-- Statut avec messages et icônes -->
+            <span *ngIf="res.status === 'Disponible'" style="color: green;">
+               Disponible
+            </span>
+            <span *ngIf="res.status === 'En Construction'" style="color: orange;">
+               En Construction
+            </span>
+            <span *ngIf="res.status === 'Vendu'" style="color: red;">
+               Vendu
+            </span>
+          </td>
+          <td><button (click)="showLocation(res.address)">Show Location</button>
+          <button (click)="likeRes(res)" style="color: aqua; border-radius: 15%;">Like</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
