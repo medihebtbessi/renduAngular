@@ -4,17 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
-import { UserComponent } from './userManagement/user/user/user.component';
+import { FormsModule } from '@angular/forms';
+import { ResidencesComponent } from './residences/residences.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    UserComponent
+    ResidencesComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
