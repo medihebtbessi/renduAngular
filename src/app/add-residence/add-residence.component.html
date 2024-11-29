@@ -1,0 +1,73 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Residence Form</h2>
+    <form [formGroup]="residenceForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="id" class="form-label">ID</label>
+            <input
+              type="number"
+              id="id"
+              class="form-control"
+              formControlName="id"
+              placeholder="Enter residence ID"
+              [readonly]="residence?.id != null"
+            />
+          </div>
+          
+  
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="name"
+          placeholder="Enter residence name"
+        />
+        
+      </div>
+  
+      <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <input
+          type="text"
+          id="address"
+          class="form-control"
+          formControlName="address"
+          placeholder="Enter residence address"
+        />
+       
+      </div>
+  
+      <div class="mb-3">
+        <label for="image" class="form-label">Image URL</label>
+        <input
+          type="text"
+          id="image"
+          class="form-control"
+          formControlName="image"
+          placeholder="Enter image URL"
+        />
+       
+      </div>
+  
+      <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <select id="status" class="form-control" formControlName="status">
+          <option value="" disabled>Select a status</option>
+          <option value="Disponible">Disponible</option>
+          <option value="Vendu">Vendu</option>
+          <option value="En Construction">En Construction</option>
+        </select>
+       
+      </div>
+  
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="residenceForm.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+  

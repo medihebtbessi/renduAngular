@@ -1,1 +1,13 @@
-<p>{{idR}}</p>
+<div  class="card mb-3">
+    <img [src]="residence.image" class="card-img-top" alt="{{ residence.name }}" style="width: 250px; height: 250px;" />
+    <div class="card-body">
+      <h5 class="card-title">{{ residence.name }}</h5>
+      <p class="card-text">Address: {{ residence.address }}</p>
+      <p class="card-text">
+        <small class="text-body-secondary">Status: {{ residence.status }}</small>
+      </p>
+    </div>
+  </div>
+
+  <a  class="btn btn-success" href="add-residence">Add Residence</a>
+  <a class="btn btn-success" href="update-residence/{{residence.id}}">update Residence</a>
